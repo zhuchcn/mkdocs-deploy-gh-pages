@@ -47,6 +47,8 @@ if ! git config --get user.email; then
     git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 fi
 
+git config --global --add safe.directory "${GITHUB_WORKSPACE}"
+
 git remote rm origin
 git remote add origin "${remote_repo}"
 
